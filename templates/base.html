@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block head %}
+    <title>{% block title %}{% endblock title %}</title>
+    {% endblock head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+</head>
+
+<body class="flex flex-col justify-between min-h-screen font-sans leading-normal tracking-normal">
+    <div class="h-16">{% block header %}{% endblock header %}</div>
+
+    <main class="container flex-1 w-full md:max-w-3xl mx-auto overflow-x-hidden">
+        {% block content %}{% endblock content %}
+    </main>
+    {% block footer %}
+    <div class="flex w-full h-20 justify-center items-center">
+        &copy; 2022 by <a class="pl-2" href="https://awesomeblog.com/">Awesome Blog</a>.
+    </div>
+    {% endblock footer %}
+</body>
+
+<script src="/static/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</script>
+
+</html>
