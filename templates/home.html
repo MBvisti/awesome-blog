@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Awesome blog | by DeveloperMan{% endblock title %}
+
+{% block content %}
+<div class="w-full h-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
+    <h1 class="text-center text-3xl">All about tech</h1>
+    <h3 class="text-center text-lg mt-2 text-gray-600">More words describing the blog here</h3>
+    {% for fm in posts %}
+    <a class="mb-3" href="/posts/{{fm.file_name}}">
+        <div class="flex flex-col mb-5 px-4 py-6 cursor-pointer">
+            <h2 class="text-2xl font-semibold hover:underline">{{fm.title}}</h2>
+            <div class="flex items-center mt-2">
+                <p class="hidden md:block text-base ml-2 mr-2">{{fm.posted}}</p>
+                <p class="hidden md:block text-base mx-2">{{fm.author}}</p>
+                <p class="text-base ml-0 md:ml-2">Reading time:
+                {{fm.estimated_reading_time}} min</p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock content %}
+

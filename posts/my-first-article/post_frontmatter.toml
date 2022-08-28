@@ -1,0 +1,8 @@
+title = 'This is my first article'
+file_name = 'my-first-article'
+description = 'The first article authored by me'
+tags = ['']
+posted = '22/08/2022'
+estimated_reading_time = 13
+author = 'Morten Vistisen' 
+order = 1
