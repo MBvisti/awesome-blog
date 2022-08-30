@@ -67,9 +67,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@mbvisti](https://twitter.com/mbvisti) - hi@mortenvistisen.com
-
-Project Link: [https://github.com/mbvisti/awesome-blog](https://github.com/mbvisti/awesome-blog)
+Morten Vistisen - [@mbvisti](https://twitter.com/mbvisti) - hi@mortenvistisen.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
