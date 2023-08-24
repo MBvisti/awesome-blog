@@ -1,0 +1,1 @@
+pub static CONTENT_TYPE_TEXT_HTML: &str = "text/html";

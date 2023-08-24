@@ -1,0 +1,8 @@
+title = 'The Second Post'
+file_name = 'the-second-post'
+description = 'A stranger is a friend you have not met yet.'
+tags = ['']
+posted = '24/08/2023'
+estimated_reading_time = 2
+author = 'Adam'
+order = 2

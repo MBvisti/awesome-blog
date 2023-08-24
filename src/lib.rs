@@ -1,22 +1,19 @@
+pub mod constants;
+pub mod handlers;
+pub mod models;
+
 use actix_files::Files;
 use actix_web::{dev::Server, middleware, web, App, HttpResponse, HttpServer};
 use std::net::TcpListener;
 use tera::Tera;
 
-pub mod handlers;
 
 #[macro_use]
 extern crate lazy_static;
 
 lazy_static! {
     pub static ref TEMPLATES: Tera = {
-        let mut tera = match Tera::new("templates/**/*.html") {
-            Ok(t) => t,
-            Err(e) => {
-                println!("Parsing error(s): {}", e);
-                ::std::process::exit(1);
-            }
-        };
+        let mut tera = Tera::new("templates/**/*.html").expect("Unable to unwrap Tera template.");
         tera.autoescape_on(vec![".html", ".sql"]);
         tera
     };
@@ -29,7 +26,7 @@ pub fn start_blog(listener: TcpListener) -> Result<Server, std::io::Error> {
             .wrap(middleware::Logger::default())
             .service(Files::new("/static", "static/").use_last_modified(true))
             .route("/health", web::get().to(HttpResponse::Ok))
-            .service(handlers::index) 
+            .service(handlers::index)
             .service(handlers::post)
     })
     .listen(listener)?
